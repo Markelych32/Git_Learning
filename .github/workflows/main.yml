@@ -9,12 +9,14 @@ jobs:
         run: echo "Hello, world!"
 
   print_full_technical_info:
+    needs: print_hello
     runs-on: ubuntu-latest
     steps:
       - name: Print full_tech_info
         run: sudo lshw
 
   print_short_technical_info:
+    needs: print_full_technical_info
     runs-on: ubuntu-latest
     steps:
       - name: Print shot_technical_info
